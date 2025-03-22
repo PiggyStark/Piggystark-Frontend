@@ -8,12 +8,11 @@ const Hero = () => {
       <main className="flex flex-row items-center justify-between text-start max-w-7xl w-full px-16">
         {/* Left Section: Write-up */}
         <div className="flex-1">
-          <p className="text-5xl font-bold">
-            Your Decentralized <br />
-            way to save,<br />
-            invest 🟤and HODL <br />
-          </p>
-          <p className="text-sm mt-4">
+            <p className="text-5xl font-bold font-unbounded">
+              Your Decentralized way to save,<br />
+              invest <span className="inline-flex items-center"><Image src="/coin.svg" alt="coin" width={35} height={35} /></span> and HODL
+            </p>
+          <p className="text-sm mt-4 font-unbounded">
             Automate your savings, maximize your yields, and grow your HODL effortlessly.
           </p>
           <div className="mt-10">
