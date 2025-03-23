@@ -16,15 +16,15 @@ const cardData: CardProps[] = [
   },
   {
     symbol: "/images/save.png",
-    title: "Automated savings plan",
+    title: "Allocate goal specific savings",
     details:
-      "Effortlessly grow your savings with automated deposits. Choose between flexible or fixed plans and watch your crypto stack up over time",
+      "Save with purpose. Allocate funds to specific financial goals and track your progress—all while earning passive income.",
     img: "/images/phone.png",
     display: "col",
   },
   {
     symbol: "/images/shield.png",
-    title: "Automated savings plan",
+    title: "Long term crypto storage",
     details:
       "Effortlessly grow your savings with automated deposits. Choose between flexible or fixed plans and watch your crypto stack up over time",
     img: "/images/storage.png",
