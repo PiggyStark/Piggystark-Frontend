@@ -1,5 +1,5 @@
 import Navbar from "./components/navbar";
-import Offer from "./components/offer";
+import Offer from "@components/offer";
 
 export default function Home() {
   return (

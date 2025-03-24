@@ -6,35 +6,43 @@ import clsx from "clsx";
 
 import { Syne, Unbounded } from "next/font/google";
 
-export interface CardProps {
-  symbol: StaticImageData | string;
+export interface CardType {
   title: string;
   details: string;
-  img: StaticImageData | string;
+  width: string; // Tailwind class for width (e.g., "w-full", "md:w-1/2")
+  height: string; // Tailwind class for height (e.g., "h-64", "md:h-96")
   display: "row" | "col";
+  rounded?: string;
+  padding?: string;
+}
+
+export interface CardProps {
+  icon: StaticImageData | string;
+  img: {
+    url: StaticImageData | string;
+    size?: { width: number; height: number };
+    position?: string;
+  };
+  card: CardType;
   button?: boolean;
-  imgBtm?: boolean;
 }
 
 const syne = Syne({ weight: ["400", "600", "700"], subsets: ["latin"] });
 const unbounded = Unbounded({ weight: ["400", "600"], subsets: ["latin"] });
 
-const Card: React.FC<CardProps> = ({
-  symbol,
-  title,
-  details,
-  img,
-  imgBtm,
-  display,
-  button,
-}) => {
-  const isRow = display === "row";
+const Card: React.FC<CardProps> = ({ icon, img, card, button }) => {
+  const isRow = card.display === "row";
 
   return (
     <div
       className={clsx(
-        "bg-white rounded-[22px] md:rounded-[44px] relative flex h-full",
-        isRow ? "flex-col md:flex-row justify-between" : "flex-col items-center"
+        "bg-white relative flex",
+        isRow
+          ? "flex-col md:flex-row justify-between"
+          : "flex-col items-center",
+        `rounded-[22px] md:rounded-[44px]`,
+        card.width,
+        card.height
       )}
     >
       {/* Content Section */}
@@ -44,27 +52,27 @@ const Card: React.FC<CardProps> = ({
           isRow ? "md:w-[50%] w-full" : "w-auto"
         )}
       >
-        <Image src={symbol} alt={title} width={40} height={40} priority />
+        <Image src={icon} alt={card.title} width={40} height={40} priority />
         <h3
           className={clsx(
-            "text-[24px] font-medium leading-[50px] text-black",
+            "text-[24px] font-medium md:leading-[50px] text-black",
             unbounded.className
           )}
         >
-          {title}
+          {card.title}
         </h3>
         <p
           className={clsx(
-            "text-[16px] leading-[30px] font-medium text-[#000000B2] text-left",
+            "text-[16px] md:leading-[30px] font-medium text-[#000000B2] text-left",
             syne.className
           )}
         >
-          {details}
+          {card.details}
         </p>
 
         {button && (
           <div className="mt-8 md:mt-16">
-            <Button />
+            <Button text="Get started" bgColor="#FBF6FF" fontFamily={syne.className} />
           </div>
         )}
       </div>
@@ -72,21 +80,19 @@ const Card: React.FC<CardProps> = ({
       {/* Image Section */}
       <div
         className={clsx(
-          "overflow-hidden rounded-[44px]",
-          isRow
-            ? "md:absolute bottom-0 right-0"
-            : "relative px-8 md:px-10 lg:px-[52px]"
+          "overflow-hidden rounded-[22px] md:rounded-[44px]",
+          isRow ? "md:absolute bottom-0 right-0" : "",
+          img.position ? img.position : "",
         )}
       >
         <Image
-          src={img}
-          alt={title}
-          width={500}
-          height={300}
+          src={img.url}
+          alt={card.title}
+          width={img.size?.width}
+          height={img.size?.height}
           className={clsx(
-            "rounded-[44px] object-cover w-full h-full",
-            isRow && "max-w-[320px] float-end",
-            imgBtm && "w-[70rem]"
+            "object-cover w-full h-full",
+            isRow && "float-end",
           )}
         />
       </div>
