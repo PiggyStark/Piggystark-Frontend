@@ -8,7 +8,7 @@ import { Button } from "./ui/button";
 const inter = Inter({ subsets: ["latin"] });
 const Navbar = () => {
   return (
-    <div className="flex items-center justify-between w-full h-16 px-16 pt-12 ">
+    <div className="flex items-center justify-between w-full max-w-screen-2xl mx-auto px-10 py-6 xl:px-8">
       {/* logo */}
       <div className="flex items-center w-fit h-fit gap-3">
         <Image src={piggystarklogo} alt="logo" width={180} />

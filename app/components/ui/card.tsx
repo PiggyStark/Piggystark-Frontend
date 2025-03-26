@@ -37,7 +37,7 @@ const Card: React.FC<CardProps> = ({
           {description}
         </p>
         {button && (
-          <div className="mt-[4rem]">
+          <div className="mt-[4rem] md:mt-[8rem]">
             <Button
               bgColor="#FBF6FF"
               fontFamily={syne.className}

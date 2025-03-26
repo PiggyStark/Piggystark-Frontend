@@ -1,15 +1,15 @@
-
 import React from "react";
 import Card from "@components/ui/card";
-import { Syne, Unbounded } from "next/font/google";
+import { Unbounded } from "next/font/google";
 
-const syne = Syne({ weight: ["400", "600", "700"], subsets: ["latin"] });
 const unbounded = Unbounded({ weight: ["400", "600"], subsets: ["latin"] });
 
 const Offer: React.FC = () => {
   return (
-    <div className="bg-[url('/images/bggrad.webp')] bg-cover bg-center p-8">
-      <h2 className={`text-[#211F23] font-medium text-[25px] md:text-[32px] text-center mb-[2rem] ${unbounded.className}`}>
+    <div className="bg-[url('/images/bggrad.webp')] bg-cover bg-center px-10 py-16 xl:px-8">
+      <h2
+        className={`text-[#211F23] font-medium text-[25px] md:text-[32px] text-center mb-[2rem] ${unbounded.className}`}
+      >
         What we offer
       </h2>
 
