@@ -1,9 +1,25 @@
-export const Button: React.FC = () => {
+import React from "react";
+import { Unbounded } from "next/font/google";
+
+interface ButtonProps {
+  text?: string;
+  bgColor: string;
+  fontFamily?: string;
+}
+
+const unbounded = Unbounded({ subsets: ["latin"] });
+
+export const Button: React.FC<ButtonProps> = ({ text, bgColor, fontFamily }) => {
   return (
     <button
-      className="w-[200px] h-[60px] bg-white rounded-2xl text-black border-b-6 border-black font-display" 
+      style={{ backgroundColor: bgColor }}
+      className={`w-[200px] h-[60px] rounded-2xl text-black border-b-8 border-black ${
+        fontFamily || unbounded.className
+      }`}
     >
-      Get started
+      {text}
     </button>
   );
 };
+
+export default Button;

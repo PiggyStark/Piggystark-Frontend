@@ -1,11 +1,15 @@
 import Footer from "./components/Footer";
 import Navbar from "./components/navbar";
+import Offer from "@components/offer";
 
 export default function Home() {
   return (
-    <div className="h-full min-h-screen">
-      <Navbar />
+    <>
+      <div className="bg-[#DD3C00] h-dvh">
+        <Navbar />
+      </div>
+      <Offer />
       <Footer />
-    </div>
+    </>
   );
 }
