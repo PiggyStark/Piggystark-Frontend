@@ -3,7 +3,7 @@ import Navbar from "./components/navbar";
 
 export default function Home() {
   return (
-    <div className="bg-white h-dvh">
+    <div className="h-full min-h-screen">
       <Navbar />
       <Footer />
     </div>
