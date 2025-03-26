@@ -39,7 +39,7 @@ const Offer: React.FC = () => {
           image="/images/storage.webp"
           button
           extraClasses="md:col-span-2 h-[700px] md:h-[528px] relative"
-          imgClasses="absolute w-[65%] md:w-[40%] lg:w-auto float-end right-0 bottom-0"
+          imgClasses="absolute w-[65%] md:w-[40%] lg:w-auto float-end right-0 bottom-0 rounded-br-[44px]"
         />
       </div>
     </div>
