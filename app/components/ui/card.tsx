@@ -2,11 +2,6 @@ import React from "react";
 import Image from "next/image";
 import Button from "@components/ui/button";
 
-import { Syne, Unbounded } from "next/font/google";
-const syne = Syne({ weight: ["400", "600", "700"], subsets: ["latin"] });
-const unbounded = Unbounded({ weight: ["400", "600"], subsets: ["latin"] });
-
-
 interface CardProps {
   icon: string;
   title: string;
@@ -32,15 +27,14 @@ const Card: React.FC<CardProps> = ({
     >
       <div className="space-y-[1.2rem] mb-[3rem] md:mb-[6rem]">
         <Image src={icon} alt={title} width={40} height={39.44} />
-        <h2 className={`text-black font-medium text-[18px] md:text-[24px] ${unbounded.className}`}>{title}</h2>
-        <p className={`text-[#000000B2] font-medium text-[16px] max-w-[612px] ${syne.className}`}>
+        <h2 className={`text-black font-medium text-[18px] md:text-[24px] font-display`}>{title}</h2>
+        <p className={`text-[#000000B2] font-medium text-[16px] max-w-[612px] font-syne`}>
           {description}
         </p>
         {button && (
-          <div className="mt-[4rem] md:mt-[8rem]">
+          <div className="mt-[4rem] bg-white md:mt-[8rem]">
             <Button
-              bgColor="#FBF6FF"
-              fontFamily={syne.className}
+              bgColor="bg-[#FBF6FF]"
               text="Get started"
             />
           </div>

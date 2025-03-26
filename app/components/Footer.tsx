@@ -1,6 +1,4 @@
 import Image, { StaticImageData } from 'next/image';
-import Hand from '../../public/Hand.png';
-import wave from '../../public/wave.svg';
 import { socialLinks } from 'app/constants/socials';
 import Link from 'next/link';
 
@@ -21,7 +19,7 @@ const Footer = () => {
         <div className="relative w-full max-w-[1256px] h-[613.73px] mx-auto mt-[63.64px] rounded-[78px] overflow-hidden">
           {/* Background Image */}
           <Image
-            src={wave}
+            src="/icons/wave.svg"
             alt="Decorative wave background"
             fill
             className="object-cover"
@@ -44,7 +42,7 @@ const Footer = () => {
               <Image
                 width={350}
                 height={250}
-                src={Hand}
+                src="/images/Hand.png"
                 alt="3D hand illustration showing money growth"
                 className="object-contain"
                 priority

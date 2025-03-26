@@ -24,7 +24,7 @@ const Navbar = () => {
         </ul>
       </nav>
 
-      <Button text="Get started" bgColor="white" />
+      <Button text="Get started" bgColor="bg-white" />
     </div>
   );
 };
