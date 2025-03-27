@@ -1,3 +1,4 @@
+import Convenient from "@components/convenient";
 import Footer from "./components/Footer";
 import Navbar from "./components/navbar";
 import Offer from "@components/offer";
@@ -9,6 +10,7 @@ export default function Home() {
         <Navbar />
       </div>
       <Offer />
+      <Convenient/>
       <Footer />
     </>
   );
