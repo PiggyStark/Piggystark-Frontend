@@ -1,13 +1,20 @@
-import React from "react";
-import { Unbounded } from "next/font/google";
 
-const unbounded = Unbounded({ subsets: ["latin"] });
-export const Button: React.FC = () => {
+interface ButtonProps {
+  text?: string;
+  bgColor?: `bg-${string}`;
+  fontFamily?: string;
+}
+
+export const Button: React.FC<ButtonProps> = ({ text, bgColor, fontFamily }) => {
   return (
     <button
-      className={`w-[200px] h-[60px] bg-white rounded-2xl text-black border-b-8 border-black ${unbounded.className} `}
+      className={`w-[200px] h-[60px] ${bgColor} rounded-2xl  text-black border-b-6 transition-all hover:border-b-0 hover:cursor-pointer hover:bg-black hover:text-white border-black ${
+        fontFamily || "font-display"
+      }`}
     >
-      Get started
+      {text}
     </button>
   );
 };
+
+export default Button;
