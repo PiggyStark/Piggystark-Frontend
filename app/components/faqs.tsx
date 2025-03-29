@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import { Unbounded } from "next/font/google";
 
 const unbounded = Unbounded({ subsets: ["latin"] });
@@ -19,11 +19,17 @@ const FAQItem = ({
   lineWidth,
   index,
 }: FAQItemProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+
   // Add extra spacing for the third item (index 2), but less than before
   const topMargin = index === 2 ? "mt-6" : "mt-2";
 
   // Add extra padding after the text for the last item
   const contentClass = isLast ? "pb-8" : "";
+
+  // Dummy text for the dropdown content
+  const dummyText =
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.";
 
   return (
     <div className={`py-2 w-full ${isLast ? "pb-4" : ""}`}>
@@ -36,9 +42,21 @@ const FAQItem = ({
         <div
           className={`flex items-center w-full text-white text-left ${topMargin} ${contentClass} ${unbounded.className}`}
         >
-          <span className="text-2xl mr-4 w-6 flex-shrink-0 text-center">+</span>
+          <span
+            className="text-2xl mr-4 w-6 flex-shrink-0 text-center cursor-pointer"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? "×" : "+"}
+          </span>
           <span className="whitespace-nowrap">{question}</span>
         </div>
+
+        {/* Dropdown content */}
+        {isOpen && (
+          <div className="pl-10 pr-4 py-3 text-white/80 text-sm transition-all duration-300 animate-fadeIn">
+            {dummyText}
+          </div>
+        )}
       </div>
     </div>
   );
@@ -65,7 +83,7 @@ const FAQs = () => {
           {/* Left column with title */}
           <div className="md:w-1/3 mb-6 md:mb-0">
             <h2
-              className={`text-3xl md:text-4xl font-bold text-white ${unbounded.className}`}
+              className={`text-3xl md:text-4xl font-bold text-white ${unbounded.className} font-medium`}
             >
               Frequently Asked Questions
             </h2>
