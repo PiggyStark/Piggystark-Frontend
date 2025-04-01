@@ -3,6 +3,7 @@ import Footer from "./components/Footer";
 import Navbar from "./components/navbar";
 import FAQs from "./components/faqs";   // From `feat-6`
 import Offer from "@components/offer";  // From `main`
+import GetStarted from "@components/GetStarted";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       </div>
       <Offer />         {/* From `main` */}
       <Convenient />
+      <GetStarted />
       <Footer />
     </>
   );
