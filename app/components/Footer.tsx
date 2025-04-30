@@ -31,7 +31,7 @@ const Footer = () => {
               Start saving and grow your wealth<br />with PiggyStark
             </h2>
             <Link
-              href="/get-started"
+              href="/connect-wallet"
               className="mt-8 font-heading bg-white text-black py-4 px-10 rounded-xl hover:bg-gray-100 transition-colors text-lg xl:w-[310px]"
               aria-label="Get started with PiggyStark"
             >

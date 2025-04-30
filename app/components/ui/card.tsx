@@ -1,6 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Button from "@components/ui/button";
+import Link from "next/link";
 
 interface CardProps {
   icon: string;
@@ -33,10 +34,12 @@ const Card: React.FC<CardProps> = ({
         </p>
         {button && (
           <div className="mt-[4rem] bg-white md:mt-[8rem]">
-            <Button
-              bgColor="bg-[#FBF6FF]"
-              text="Get started"
-            />
+            <Link href="/connect-wallet">
+              <Button
+                bgColor="bg-[#FBF6FF]"
+                text="Get started"
+              />
+            </Link>
           </div>
         )}
       </div>
