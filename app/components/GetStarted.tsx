@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 import heroImage from "@assets/image.webp";
 
 function GetStarted() {
@@ -21,9 +22,11 @@ function GetStarted() {
           </h1>
 
           {/* Button */}
-          <button className="mt-6 px-4 mr-8 py-2 bg-white text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none transition duration-300 ease-in-out sm:mt-8 sm:px-6 sm:py-3">
-            Get started
-          </button>
+          <Link href="/get-started">
+            <button className="mt-6 px-4 mr-8 py-2 bg-white text-gray-800 rounded-lg hover:bg-gray-100 focus:outline-none transition duration-300 ease-in-out sm:mt-8 sm:px-6 sm:py-3">
+              Get started
+            </button>
+          </Link>
         </div>
       </div>
     </div>

@@ -3,6 +3,7 @@ import piggystarklogo from "@assets/piggystarklogo.svg";
 import Image from "next/image";
 import { navItems } from "app/constants/navitems";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
@@ -24,7 +25,9 @@ const Navbar = () => {
         </ul>
       </nav>
 
-      <Button text="Get started" bgColor="bg-white" />
+      <Link href="/connect-wallet">
+        <Button text="Get started" bgColor="bg-white" />
+      </Link>
     </div>
   );
 };
