@@ -7,13 +7,13 @@ import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <div className="flex items-center bg-[#DD3C00] justify-between w-full max-w-screen-2xl mx-auto px-10 py-6 xl:px-8">
+    <div className="flex items-center bg-[#DD3C00] justify-between w-full max-w-screen-2xl mx-auto px-4 sm:px-10 py-6 xl:px-8">
       {/* logo */}
       <div className="flex items-center w-fit h-fit gap-3">
         <Image src={piggystarklogo} alt="logo" width={180} />
       </div>
 
-      <nav>
+      <nav className="hidden xl:flex">
         <ul
           className="font-sans text-white flex gap-12 text-[16px]"
         >

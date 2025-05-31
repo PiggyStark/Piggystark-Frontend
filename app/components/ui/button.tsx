@@ -7,7 +7,7 @@ interface ButtonProps {
 export const Button: React.FC<ButtonProps> = ({text, bgColor, fontFamily}) => {
    return (
       <button
-         className={`w-[200px] h-[60px] ${bgColor} rounded-2xl  text-black border-b-6 transition-all hover:border-b-0 hover:cursor-pointer hover:bg-black hover:text-white border-black ${
+         className={`py-[12px] px-[32px] text-[14px] sm:text-[16px] ${bgColor} rounded-2xl  text-black border-b-6 transition-all hover:border-b-0 hover:cursor-pointer hover:bg-black hover:text-white border-black ${
             fontFamily || "font-display"
          }`}
       >
